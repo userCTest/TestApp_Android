@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.soywiz.korlibs.klock:klock-android:1.9.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d9a376a19749d0d21b22024b0620b6d4/jetified-klock-debug/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d9a376a19749d0d21b22024b0620b6d4/jetified-klock-debug/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d9a376a19749d0d21b22024b0620b6d4/jetified-klock-debug/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.soywiz.korlibs.klock/klock-android/1.9.1/67407db880a5a2605ea7d8ba955b0ac503f66ed3/klock-android-1.9.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.soywiz.korlibs.klock/klock-android/1.9.1/36ad3c903d4c458fc5bc0cf249c2c07eb3f64667/klock-android-1.9.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

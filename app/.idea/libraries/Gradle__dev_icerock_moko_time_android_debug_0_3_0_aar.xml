@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.icerock.moko:time-android-debug:0.3.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/942c5f485af28be093352e4eef2418bc/jetified-time-debug/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/942c5f485af28be093352e4eef2418bc/jetified-time-debug/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/942c5f485af28be093352e4eef2418bc/jetified-time-debug/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.icerock.moko/time-android-debug/0.3.0/9e79bc4153abbb58ad72085222e1708cbef6758d/time-android-debug-0.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

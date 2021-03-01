@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.icerock.moko:resources-android-debug:0.10.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e84bc300abb6248164a2abcdb80b3cc7/jetified-resources-debug/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e84bc300abb6248164a2abcdb80b3cc7/jetified-resources-debug/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e84bc300abb6248164a2abcdb80b3cc7/jetified-resources-debug/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.icerock.moko/resources-android-debug/0.10.0/ce72cc2f58f8cfb274f61dfab6ff3ad186048242/resources-android-debug-0.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

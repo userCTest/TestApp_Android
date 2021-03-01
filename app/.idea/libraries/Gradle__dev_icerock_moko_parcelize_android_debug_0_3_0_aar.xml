@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.icerock.moko:parcelize-android-debug:0.3.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b59037e8a8ce7722276e1d5c1dc1e9d/jetified-parcelize-debug/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b59037e8a8ce7722276e1d5c1dc1e9d/jetified-parcelize-debug/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2b59037e8a8ce7722276e1d5c1dc1e9d/jetified-parcelize-debug/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.icerock.moko/parcelize-android-debug/0.3.0/d497c344f6c0b4bbf48742e3795f2fd22238e0bc/parcelize-android-debug-0.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
