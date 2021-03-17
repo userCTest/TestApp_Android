@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Usercentrics</string>
     <string name="test_app">Test APP</string>
-    <string name="btn_close_app">Close App</string>
+    <string name="btn_close_app">Close</string>
     <string name="uc_logo">Usercentrics Logo</string>
     <string name="togglebutton">ToggleButton</string>
     <string name="button">Button</string>

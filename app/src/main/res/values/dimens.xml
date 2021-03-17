@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="account_entry_vertical_margin">14dp</dimen>
+    <dimen name="account_entry_horizontal_margin">22dp</dimen>
+    <dimen name="account_entry_check_size">30dp</dimen>
+    <dimen name="account_entry_name_size">22sp</dimen>
+    <dimen name="account_entry_settings_id_size">15sp</dimen>
+    <dimen name="create_account_dialog_vertical_margin">14dp</dimen>
+    <dimen name="create_account_dialog_horizontal_margin">28dp</dimen>
+</resources>
