@@ -1,11 +1,12 @@
-package com.usercentrics.test_app
+package com.ruimgreis.test_app
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.usercentrics.sdk.*
 import com.usercentrics.sdk.models.common.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,49 +14,92 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private val placeholder by lazy { findViewById<FrameLayout>(R.id.placeholder) }
-    var predefinedUI: UCPredefinedUI? = null
+    private val LOG_TAG = "ViewActivity"
+    // var to contain injected settingsId
+    private lateinit var settingsId: String
+    private var predefinedUI: UCPredefinedUI? = null
     lateinit var usercentrics: Usercentrics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        showsUsercentrics()
+        // hides soft input keyboard
+        input_settings_id.showSoftInputOnFocus = false
+        // version input
+        txt_version.text =  getVersionName()
+        // go button input to get settingsId
+        btn_go.setOnClickListener(){ _ ->
+            if(input_settings_id.text.toString().isNullOrEmpty()){
+                Toast.makeText(this,
+                    "Please insert a SettingsId",
+                    Toast.LENGTH_LONG).show()
+            } else {
+                settingsId = input_settings_id.text.toString().trim()
+                // Launch CMP
+                showCMP(settingsId)
+            }
+        }
+
+        // btn close app
+        val btn_close_app= findViewById<View>(R.id.btn_close_app)
+        btn_close_app.setOnClickListener{
+            this.finishAffinity()
+        }
     }
 
     override fun onBackPressed() {
-        if (predefinedUI != null) {
-            predefinedUI!!.onBackButtonPress()
+        val view = predefinedUI
+        if (view != null) {
+            view.onBackButtonPress()
         } else {
             super.onBackPressed()
         }
     }
 
-    private fun showsUsercentrics() {
-        // setingsIds: cmp v1 - egLMgjg9j
-        //             cmp v2 - ZDQes7xES
-        val settingsID = "egLMgjg9j"
-        val defLang = "de"
+    /**
+     * gets version of SDK being used
+     */
+    private fun getVersionName(): String {
+        val pInfo = this.getPackageManager().getPackageInfo(this.getPackageName(), 0)
+        return pInfo.versionName ?: "test"
+    }
+
+    // shows CMP, using UsercentricsActivityLauncher
+    // https://docs.usercentrics.com/cmp_in_app_sdk/latest/predefined_ui/present/#presenting-the-cmp
+    private fun showCMP(settingsId: String) {
         val userOptions = UserOptions(
                 controllerId = null,
-                defaultLanguage = defLang,
+                defaultLanguage = null,
                 version = null,
                 debugMode = true,
                 predefinedUI = true,
                 noCache = null
         )
         usercentrics = Usercentrics(
-                settingsId = settingsID,
+                settingsId = settingsId,
                 options = userOptions,
                 appContext = getApplicationContext()
-        )
+        ).apply {
+            setLoggerDelegate(UsercentricsLoggerDelegate(
+                logDebug = { message, cause ->
+                    Log.d(LOG_TAG, message, cause)
+                },
+                logWarning = { message, cause ->
+                    Log.w(LOG_TAG, message, cause)
+                },
+                logError = { message, cause ->
+                    Log.e(LOG_TAG, message, cause)
+                }
+            ))
+        }
 
         usercentrics.initialize(
                 callback = {
-                    predefinedUI = usercentrics.getPredefinedUI(viewContext = this, customAssets = null) {
-                        placeholder.removeView(predefinedUI)
-                        predefinedUI = null
-                        this.finishAffinity()
+                    predefinedUI = usercentrics.getPredefinedUI(viewContext = this) {
+                            placeholder.removeView(predefinedUI)
+                            predefinedUI = null
+                            this.finishAffinity()
 
                     }
                     predefinedUI?.let {
@@ -64,25 +108,9 @@ class MainActivity : AppCompatActivity() {
 
                 },
                 onFailure = { error ->
-                    println("Error on initialization")
+                    println("Error on initialization: $error.message")
                 }
         )
-
-        /*btn_close_app.setOnClickListener{
-            this.finishAffinity()
-        }*/
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == UsercentricsActivity.REQUEST_CODE &&
-            resultCode == UsercentricsActivity.RESULT_OK_CODE
-        ) {
-            val services = UsercentricsActivity.getResult(data)
-            for (service in services) {
-                Log.i("Consents: ", service.toString());
-            }
-        }
 
     }
 }

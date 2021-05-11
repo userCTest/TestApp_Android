@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId "com.usercentrics.inappsdk"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 6
-        versionName "1.9.8"
+        versionName "$sdk_version"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -55,6 +55,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation("com.usercentrics.sdk:usercentrics-ui:1.10.0")
+    implementation("com.usercentrics.sdk:usercentrics-ui:1.11.1")
 
 }

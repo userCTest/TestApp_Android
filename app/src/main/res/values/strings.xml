@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Usercentrics</string>
-    <string name="test_app">Test APP</string>
-    <string name="btn_close_app">Close</string>
+    <string name="test_app_ucactivity">Test APP</string>
+    <string name="btn_close_app">Close App</string>
     <string name="uc_logo">Usercentrics Logo</string>
     <string name="togglebutton">ToggleButton</string>
-    <string name="button">Button</string>
+    <string name="settings_id">Settings ID</string>
+    <string name="txt_go">Go</string>
 </resources>
