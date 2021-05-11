@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
     /**
      * gets version of SDK being used
      */
@@ -68,6 +69,13 @@ class MainActivity : AppCompatActivity() {
     // shows CMP, using UsercentricsActivityLauncher
     // https://docs.usercentrics.com/cmp_in_app_sdk/latest/predefined_ui/present/#presenting-the-cmp
     private fun showCMP(settingsId: String) {
+=======
+    private fun showsUsercentrics() {
+        // setingsIds: cmp v1 - egLMgjg9j
+        //             cmp v2 - ZDQes7xES
+        val settingsID = "ZDQes7xES"
+        val defLang = null //"de"
+>>>>>>> fae56a1ba00bbea049c9c92b31fe2c53f374fd0d
         val userOptions = UserOptions(
                 controllerId = null,
                 defaultLanguage = null,
@@ -97,9 +105,15 @@ class MainActivity : AppCompatActivity() {
         usercentrics.initialize(
                 callback = {
                     predefinedUI = usercentrics.getPredefinedUI(viewContext = this) {
+<<<<<<< HEAD
                             placeholder.removeView(predefinedUI)
                             predefinedUI = null
                             this.finishAffinity()
+=======
+                        placeholder.removeView(predefinedUI)
+                        predefinedUI = null
+                        this.finishAffinity()
+>>>>>>> fae56a1ba00bbea049c9c92b31fe2c53f374fd0d
 
                     }
                     predefinedUI?.let {
