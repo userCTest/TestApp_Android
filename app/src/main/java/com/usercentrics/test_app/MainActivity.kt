@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     private fun showsUsercentrics() {
         // setingsIds: cmp v1 - egLMgjg9j
         //             cmp v2 - ZDQes7xES
-        val settingsID = "egLMgjg9j"
-        val defLang = "de"
+        val settingsID = "ZDQes7xES"
+        val defLang = null //"de"
         val userOptions = UserOptions(
                 controllerId = null,
                 defaultLanguage = defLang,
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         usercentrics.initialize(
                 callback = {
-                    predefinedUI = usercentrics.getPredefinedUI(viewContext = this, customAssets = null) {
+                    predefinedUI = usercentrics.getPredefinedUI(viewContext = this) {
                         placeholder.removeView(predefinedUI)
                         predefinedUI = null
                         this.finishAffinity()
