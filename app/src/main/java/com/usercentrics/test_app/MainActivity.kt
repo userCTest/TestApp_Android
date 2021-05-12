@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.usercentrics.sdk.*
 import com.usercentrics.sdk.models.common.*
 import kotlinx.android.synthetic.main.activity_main.*
