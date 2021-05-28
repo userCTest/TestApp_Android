@@ -64,34 +64,22 @@ class MainActivity : AppCompatActivity() {
         return pInfo.versionName ?: "test"
     }
 
-    // shows CMP, using UsercentricsActivityLauncher
+    // shows CMP, using initialize method
     // https://docs.usercentrics.com/cmp_in_app_sdk/latest/predefined_ui/present/#presenting-the-cmp
     private fun showCMP(settingsId: String) {
         val userOptions = UserOptions(
                 controllerId = null,
                 defaultLanguage = null,
                 version = null,
-                debugMode = true,
                 predefinedUI = true,
-                noCache = null
+                noCache = null,
+                loggerLevel = UCLoggerLevel.DEBUG
         )
         usercentrics = Usercentrics(
                 settingsId = settingsId,
                 options = userOptions,
                 appContext = getApplicationContext()
-        ).apply {
-            setLoggerDelegate(UsercentricsLoggerDelegate(
-                logDebug = { message, cause ->
-                    Log.d(LOG_TAG, message, cause)
-                },
-                logWarning = { message, cause ->
-                    Log.w(LOG_TAG, message, cause)
-                },
-                logError = { message, cause ->
-                    Log.e(LOG_TAG, message, cause)
-                }
-            ))
-        }
+        )
 
         usercentrics.initialize(
                 callback = {
